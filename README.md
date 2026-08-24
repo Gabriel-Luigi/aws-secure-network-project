@@ -1,5 +1,7 @@
 ![AWS](https://img.shields.io/badge/AWS-VPC-orange)
 
+🇧🇷 [Leia em Português](README.pt-br.md)
+
 # aws-secure-network-project
 
 Hands-on project implementing a secure AWS network: private VPC, EC2 without public IP, and VPC Interface/Gateway endpoints enabling IAM-authenticated access via SSM Session Manager.
@@ -18,18 +20,20 @@ Demonstrate a practical secure network architecture on AWS by combining a Securi
 
 ## Governance Structure
 
+```
 Root
 ├── VPC
-│ ├── Private Route Table (no Internet Gateway route)
-│ ├── Security Groups
-│ │ ├── EC2 Security Group (no inbound rules)
-│ │ └── Endpoint Security Group (inbound 443 from EC2 SG only)
-│ ├── VPC Endpoints
-│ │ ├── com.amazonaws.<region>.ssm
-│ │ ├── com.amazonaws.<region>.ssmmessages
-│ │ └── com.amazonaws.<region>.ec2messages
-│ └── Private Subnet
-│ └── EC2 Instance (no public IP, IAM Role with SSM permissions)
+│   ├── Private Route Table (no Internet Gateway route)
+│   ├── Security Groups
+│   │   ├── EC2 Security Group (no inbound rules)
+│   │   └── Endpoint Security Group (inbound 443 from EC2 SG only)
+│   ├── VPC Endpoints
+│   │   ├── com.amazonaws.<region>.ssm
+│   │   ├── com.amazonaws.<region>.ssmmessages
+│   │   └── com.amazonaws.<region>.ec2messages
+│   └── Private Subnet
+│       └── EC2 Instance (no public IP, IAM Role with SSM permissions)
+```
 
 ## Architecture Flow
 
